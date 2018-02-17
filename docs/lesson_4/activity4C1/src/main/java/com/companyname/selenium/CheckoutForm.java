@@ -66,7 +66,8 @@ public class CheckoutForm {
         cvv.sendKeys("345");
 
         // Click on Pay (nothing will happen, it is not a real app :)
-
+        WebElement pay = driver.findElement(By.id("pay"));
+        pay.click();
 
         driver.quit();
     }
