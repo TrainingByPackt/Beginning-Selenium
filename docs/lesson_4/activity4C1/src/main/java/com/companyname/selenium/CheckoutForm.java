@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutForm {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         //Open Chrome browser
         WebDriver driver = new ChromeDriver();
@@ -45,10 +45,25 @@ public class CheckoutForm {
         WebElement saveInfo = driver.findElement(By.id("save-info"));
         saveInfo.click();
 
+        // Select debit card
+        WebElement debitCard = driver.findElement(By.cssSelector("input[data-payment$='debit']"));
+        debitCard.click();
 
+        // Name on Card
+        WebElement nameOnCard = driver.findElement(By.id("cc-name"));
+        nameOnCard.sendKeys("John Doe");
 
-        Thread.sleep(3000);
+        // Card number
+        WebElement cardNumber = driver.findElement(By.id("cc-number"));
+        cardNumber.sendKeys("4444555566667777");
 
+        // Expiration
+        WebElement expiration = driver.findElement(By.id("cc-expiration"));
+        expiration.sendKeys("10/18");
+
+        // CVV
+        WebElement cvv = driver.findElement(By.id("cc-cvv"));
+        cvv.sendKeys("345");
 
         driver.quit();
     }

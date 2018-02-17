@@ -94,22 +94,28 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="save-info">
-                        <label class="custom-control-label">Save this information for next time</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="save-info">
+                        <label class="form-check-label" for="save-info">
+                            Save this information for next time
+                        </label>
                     </div>
                     <hr class="mb-4">
 
                     <h4 class="mb-3">Payment</h4>
 
                     <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                            <input name="paymentMethod" type="radio" class="custom-control-input credit" checked>
-                            <label class="custom-control-label">Credit card</label>
+                        <div class="form-check">
+                            <input class="form-check-input" data-payment="input credit" type="radio">
+                            <label class="form-check-label">
+                                Credit Card
+                            </label>
                         </div>
-                        <div class="custom-control custom-radio">
-                            <input name="paymentMethod" type="radio" class="custom-control-input debit">
-                            <label class="custom-control-label">Debit card</label>
+                        <div class="form-check">
+                            <input class="form-check-input" data-payment="input debit" type="radio">
+                            <label class="form-check-label">
+                                Debit Card
+                            </label>
                         </div>
                     </div>
                     <div class="row">
