@@ -1,18 +1,17 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
 
 public class Activity5B {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        explicitWaitExample();
     }
 
-    public static void explicitWaitExample() {
+    private static void explicitWaitExample() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://trainingbypackt.github.io/Beginning-Selenium/lesson_5/activity_5_B-1.html");
 
@@ -22,17 +21,16 @@ public class Activity5B {
 
             // Set an explicit wait
             WebDriverWait wait = new WebDriverWait(driver, 5);
-            wait.until(ExpectedConditions.titleContains("explicit"));
+            wait.until(ExpectedConditions.titleContains("Explicit"));
 
             // Verify expected changes
-            if (driver.getTitle().startsWith("explicit")) {
-                System.out.println("ExplicitWait worked, the element contains 'explicit'");
+            if (driver.getTitle().startsWith("Explicit")) {
+                System.out.println("ExplicitWait worked, the element contains 'Explicit'");
             } else {
-                System.out.println("Something went wrong with ExplicitWait, 'explicit' was not found");
+                System.out.println("Something went wrong with ExplicitWait, 'Explicit' was not found");
             }
         } finally {
             driver.quit();
         }
-
     }
 }
