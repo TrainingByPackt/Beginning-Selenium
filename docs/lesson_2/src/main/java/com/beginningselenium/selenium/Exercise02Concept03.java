@@ -54,21 +54,3 @@ public class Exercise02Concept03 {
     }
 
 }
-
-/*
-public class ActivityLesson02 {
-
-  public void TestPromptAlert() {
-    Alert promptAlert = driver.switchTo().alert();
-    promptAlert.accept();
-    promptAlert.sendKeys("Java")
-    if (driver.getTitle.Contains("Java")
-      System.out.println("Load of the test worked, the text was accepted");
-    else
-      System.out.println("Something went wrong with the test, the text was not accepted");
-  }
-
-  driver.quit();
-
-}
- */
