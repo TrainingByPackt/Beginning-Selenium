@@ -1,68 +1,42 @@
 package com.beginningselenium.selenium;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Exercise02Concept04 {
+public class Exercise02Concept05 {
 
     public static void main(String[] args) {
-        checkFrames();
-        checkIFrames();
+        checkWindows();
     }
 
-    private static void checkFrames(){
+    private static void checkWindows(){
 
         WebDriver driver = new ChromeDriver();
 
         try {
-            driver.get("https://trainingbypackt.github.io/Beginning-Selenium/lesson_2/exercise02_concept_04.html");
+            driver.get("https://trainingbypackt.github.io/Beginning-Selenium/lesson_2/exercise02_concept_05.html");
+            System.out.println("Window title contents: " + driver.getTitle());
+            String parentWindowHandle = driver.getWindowHandle();
 
-            driver.switchTo().frame("info");
-            if (driver.getPageSource().contains("Frame Info")) {
-                System.out.println("The script worked, the focus was changed to Frame Info");
+            driver.switchTo().window("TwitterWindow");
+
+            System.out.println("Window title contents: " + driver.getTitle());
+            if (driver.getTitle().equalsIgnoreCase("Frame Twitter")) {
+                System.out.println("The script worked, the window title is Frame Twitter");
             } else {
-                System.out.println("Something went wrong with the script, the focus was not changed to Frame Info");
+                System.out.println("Something went wrong, the window title is NOT Frame Twitter");
             }
 
-            driver.switchTo().defaultContent();
+            // Closing the "TwitterWindow"
+            driver.close();
 
-            driver.switchTo().frame("title");
-            if (driver.getPageSource().contains("Frame Title")) {
-                System.out.println("The script worked, the focus was changed to Frame Title");
-            }
-            else {
-                System.out.println("Something went wrong with the script, the focus was not changed to Frame Title");
-            }
-
-        } finally {
-            driver.quit();
-        }
-    }
-
-    private static void checkIFrames(){
-
-        WebDriver driver = new ChromeDriver();
-
-        try {
-            driver.get("https://trainingbypackt.github.io/Beginning-Selenium/lesson_2/exercise02_concept_04.html");
-
-            driver.switchTo().frame("twitter");
-            if (driver.getPageSource().contains("Frame Twitter")) {
-                System.out.println("The script worked, the focus was changed to iFrame Twitter");
+            driver.switchTo().window(parentWindowHandle);
+            System.out.println("Parent window title contents: " + driver.getTitle());
+            if (driver.getTitle().equalsIgnoreCase("Lesson 2")) {
+                System.out.println("The script worked, the main window title is Lesson 2");
             } else {
-                System.out.println("Something went wrong with the script, the focus was not changed to Frame Info");
+                System.out.println("Something went wrong, the main window title is NOT Lesson 2");
             }
-
-            WebElement twitterFrame = driver.findElement(By.tagName("iframe"));
-            driver.switchTo().frame(twitterFrame);
-            WebElement followButton = driver.findElement(By.id("follow-button"));
-            followButton.click();
-
-            driver.switchTo().defaultContent();
-
         } finally {
             driver.quit();
         }
