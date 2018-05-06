@@ -31,7 +31,7 @@ public class Exercise03Concept03 {
         }
 
       } else {
-        System.out.println("Something went wrong, the lement 'Masters' was not enabled and visible.");
+        System.out.println("Something went wrong, the element 'Masters' was not enabled and visible.");
       }
     } finally {
       driver.quit();
@@ -39,40 +39,3 @@ public class Exercise03Concept03 {
   }
 
 }
-
-/*
-public class ActivityLesson03 {
-
-  private WebDriver driver;
-
-  public void ActivityLesson03() {
-    driver = new ChromeDriver();
-    driver.get("https://trainingbypackt.github.io/Beginning-Selenium/lesson_3/exercise_3_1.html");
-  }
-
-  public void Test() {
-    WebElement masters = driver.findElement(By
-      .xpath("//input[@value='Masters']"));
-    if (masters.isEnabled() && masters.isDisplayed())
-    {
-      System.out.println("Load of the test worked, the radio button is enabled and visible");
-      if (!masters.isSelected())
-      {
-        masters.click();
-        if (masters.isSelected())
-            System.out.println("Load of the test worked, Masters was chosen as degree");
-        else
-            System.out.println("Something went wrong with the test, Masters was not chosen as degree");
-      }
-      else
-         System.out.println("Something went wrong with the test, Masters is already selected");
-    }
-    else
-      System.out.println("Something went wrong with the test, the radio button is not enabled or it is invisible");
-
-  }
-
-  driver.quit();
-
-}
- */
