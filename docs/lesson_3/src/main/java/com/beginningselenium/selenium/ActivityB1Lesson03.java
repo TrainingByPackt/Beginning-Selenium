@@ -22,20 +22,14 @@ public class ActivityB1Lesson03 {
       WebElement spanish = driver.findElement(By.id("spanish"));
       spanish.click();
 
-      if (email.isDisplayed() && email.isEnabled()) {
-        System.out.println("Script worked, the email text box is displayed and enabled.");
+      email.sendKeys("email@gmail.com");
 
-        email.sendKeys("email@gmail.com");
-
-        if (email.getText().equalsIgnoreCase("email@gmail.com")) {
-          System.out.println("Script worked, 'email@gmail.com' was typed.");
-        } else {
-          System.out.println("Something went wrong with the script, 'email@gmail.com' was not set in the email box.");
-        }
+      // We use getAttribute("value") because it is an input element, not a text box
+      if (email.getAttribute("value").equalsIgnoreCase("email@gmail.com")) {
+        System.out.println("Script worked, 'email@gmail.com' was typed.");
       } else {
-        System.out.println("Script did not work, the email text box is not displayed and enabled.");
+        System.out.println("Something went wrong with the script, 'email@gmail.com' was not set in the email box.");
       }
-
     } finally {
       driver.quit();
     }
