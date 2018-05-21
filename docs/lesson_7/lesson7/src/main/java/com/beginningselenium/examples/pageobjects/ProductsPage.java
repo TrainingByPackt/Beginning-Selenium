@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 public class ProductsPage {
     //WebElements
     private HeaderPage header;
-    private BannerPage banner;
 
     ///WebDriver
     private WebDriver driver;
