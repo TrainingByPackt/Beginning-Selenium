@@ -2,7 +2,6 @@ package com.beginningselenium.examples.scripts;
 
 import com.beginningselenium.examples.pageobjects.AgeCalculatorPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,7 +13,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AgeCalculatorScriptGrid {
+public class AgeCalculatorTestLocalGrid {
 
     private WebDriver driver;
 
