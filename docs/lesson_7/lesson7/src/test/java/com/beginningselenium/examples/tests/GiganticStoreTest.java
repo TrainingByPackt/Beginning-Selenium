@@ -21,7 +21,7 @@ public class GiganticStoreTest {
   @AfterMethod(alwaysRun = true)
   public void teardownWebDriver() {
     if (driver != null) {
-      driver.close();
+      driver.quit();
     }
   }
 

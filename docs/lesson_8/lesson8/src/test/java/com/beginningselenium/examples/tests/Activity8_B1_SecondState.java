@@ -24,7 +24,7 @@ public class Activity8_B1_SecondState {
   @AfterMethod(alwaysRun = true)
   public void teardownWebDriver() {
     if (driver != null) {
-      driver.close();
+      driver.quit();
     }
   }
 

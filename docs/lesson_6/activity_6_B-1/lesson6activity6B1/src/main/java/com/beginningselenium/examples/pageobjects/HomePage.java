@@ -15,7 +15,7 @@ public class HomePage {
         this.driver.get(url);
     }
     public void close() {
-        this.driver.close();
+        this.driver.quit();
     }
 
     // Class Constructor

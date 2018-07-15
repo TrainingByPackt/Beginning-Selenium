@@ -3,18 +3,25 @@ package com.beginningselenium.examples.scripts;
 import com.beginningselenium.examples.pageobjects.AgeCalculatorPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AgeCalculatorScriptLocal {
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class AgeCalculatorScriptGrid {
 
     private WebDriver driver;
 
     @BeforeMethod
-    public void setUpWebDriver() {
-        driver = new ChromeDriver();
+    public void setUpWebDriver() throws MalformedURLException {
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities(new ChromeOptions());
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desiredCapabilities);
     }
 
     @AfterMethod(alwaysRun = true)
