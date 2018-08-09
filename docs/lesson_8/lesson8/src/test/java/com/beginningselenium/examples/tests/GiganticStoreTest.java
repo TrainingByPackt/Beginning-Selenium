@@ -32,7 +32,6 @@ public class GiganticStoreTest {
     HomePage homePage = new HomePage(driver);
     homePage.open();
     ProductsPage productsPage = homePage.goToProducts();
-
     // Verify results in products page
     String expectedProductsMainInfo = "Here's the spuff we sell";
     Assert.assertEquals(productsPage.getMainInfo(), expectedProductsMainInfo, "Product page main info was not the expected one.");
