@@ -5,8 +5,8 @@
 
 
 
-# Beginning Seleniums
-Beginning Selenium is a practical course where you will be able to get started and implement your first automated tests. Through this course, you will get the necessary skills and knowledge to test web applications with the most popular automation tool for browsers: Selenium. Using Selenium to automate browsers is a solid choice because its API specification (WebDriver) is on its way to become a W3C standard, which means that all major browsers support it. Different challenges are commonly present at the moment of writing automated tests for web applications; selecting an adequate test framework, using appropriate selectors to avoid flakiness and building an good Selenium framework to test your web application. The course will cover these challenges and provide you with the knowledge to develop stable and effective testing solutions.
+# Selenium Fundamentals 
+Selenium Fundamentals is a practical course where you will be able to get started and implement your first automated tests. Through this course, you will get the necessary skills and knowledge to test web applications with the most popular automation tool for browsers: Selenium. Using Selenium to automate browsers is a solid choice because its API specification (WebDriver) is on its way to become a W3C standard, which means that all major browsers support it. Different challenges are commonly present at the moment of writing automated tests for web applications; selecting an adequate test framework, using appropriate selectors to avoid flakiness and building an good Selenium framework to test your web application. The course will cover these challenges and provide you with the knowledge to develop stable and effective testing solutions.
 
 
 ## What you will learn
